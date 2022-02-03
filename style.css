@@ -1,6 +1,12 @@
 .html {
   scroll-behavior: smooth;
 }
+
+/*home*/
+#logo-home {
+  margin: auto;
+  width: 20vh;
+}
 .navbar {
   margin-bottom: 15vh;
   max-width: 100%;
