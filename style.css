@@ -5,81 +5,90 @@
 /*home*/
 #logo-home {
   margin: auto;
-  width: 20vh;
+  width: 10vh;
+  height: 10vh;
 }
 .navbar {
   margin-bottom: 15vh;
   max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .navbar ul li {
   text-decoration: none;
   list-style: none;
   grid-column: 2/3;
-  margin-top: 1vh;
-  padding: 1vh;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Bebas Neue", cursive;
   display: inline;
+  float: right;
+  font-size: 2.5vw;
+  margin: auto;
+  margin-top: 4vh;
 }
 .navbar ul li a {
   color: black;
   font-size: 3vh;
+  text-decoration: none;
+  display: block;
+  margin-left: 15px;
+}
+.navbar ul {
+  margin-right: 5vh;
 }
 .navbar ul li a:hover {
   transition: 0.5s;
   color: black;
-  border-bottom: solid 0.5px darkblue;
+  border-bottom: solid 0.5px black;
 }
 .letters {
   margin-left: 5vh;
 }
 .navbar img {
-  max-width: 100%;
-  height: 15vh;
-  margin-left: 5vh;
-  margin-top: 2vh;
-}
-.navbar ul li a {
-  text-decoration: none;
-  position: relative;
-}
-.navbar ul {
-  float: right;
+  width: 60%;
+  height: 6vh;
   margin-top: 5vh;
 }
-.letters h2 {
-  font-size: 5vh;
-  font-family: "Roboto", sans-serif;
+.navbar img:hover {
+  opacity: 50%;
+  transition: 0.3s;
 }
-.brands ul li {
+.letters h2 {
+  font-size: 6vh;
+  font-family: "Bebas Neue", cursive;
+}
+.letters ul li {
   display: inline;
   font-weight: bold;
   list-style: none;
   justify-content: space-between;
   align-items: center;
-  padding: 1vh;
-  font-size: 2.5vh;
-  font-family: "Roboto", sans-serif;
+  margin-right: 15px;
+  font-family: "Bebas Neue", cursive;
 }
-.brands ul li a:hover {
+.letters ul li a:hover {
   transition: 0.5s;
   color: black;
-  border-bottom: solid 0.5px darkblue;
+  border-bottom: solid 0.5px black;
 }
-.brands ul li a {
+.letters ul li a {
   text-decoration: none;
-  font-size: 2.5vh;
-  color: cornflowerblue;
+  color: rgba(76, 76, 77, 0.918);
+  font-size: 3vh;
 }
-.brands ul {
+.letters ul {
   justify-content: space-evenly;
 }
 
 /*products list*/
+span {
+  display: initial;
+  text-decoration: underline;
+}
 
 .brand-name {
   font-size: 5vh;
   text-decoration: underline 2px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Bebas Neue", cursive;
 }
 .item,
 .itemonsale,
@@ -90,29 +99,49 @@
   margin-top: 20vh;
   max-width: 100%;
   margin-bottom: 5vh;
+  margin-left: 5vh;
 }
-.item img,
-.itemonsale img,
-.itemsoldout img {
-  max-width: 70%;
+.item a img,
+.itemonsale a img,
+.itemsoldout a img { 
+  max-width: 100%;
   height: auto;
 }
-.itemsoldout {
+.soldout {
   opacity: 40%;
+}
+.item .soldoutlable {
+  display: none;
+}
+.soldout .soldoutlable {
+  display: block;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  font-size: 3vh;
+  padding: 2px;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
 }
 .brand-name {
   text-align: center;
+  font-size: 4vh;
 }
-.products {
+main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 100px));
+  grid-template-columns: repeat(auto-fill, minmax(450px, 400px));
   gap: 10vw;
   box-sizing: border-box;
   gap: 1rem;
 }
-.products a img:hover {
+.item a img:hover{
   opacity: 70%;
   transition: 1s;
+}
+.soldout a img:hover{
+  opacity: 1.0;
+  filter: alpha(opacity=1.0);
 }
 .products a {
   text-decoration: none;
@@ -121,48 +150,73 @@
 .description {
   grid-column: 1/2;
   display: grid;
-  grid-template-columns: 0.6fr 0.1fr;
-  grid-template-rows: auto;
-  font-family: "Roboto", sans-serif;
+  grid-template-columns: 60% 20% 20%;
+  grid-template-rows: 40% 30% 30%;
+  font-family: "Bebas Neue", cursive;
 }
-.description h4 {
-  font-family: "Roboto", sans-serif;
+.description h3 {
+  grid-column: 1/2;
+  font-size: 3vh;
+  font-family: "Bebas Neue", cursive;
+}
+.price {
+  font-family: "Bebas Neue", cursive;
   grid-column: 1/2;
   grid-row: 2/3;
-  float: right;
+  font-size: 2.5vh;
 }
-.description p {
-  grid-column: 2/3;
-  grid-row: 1/2;
+.price-now {
+  grid-column: 1/3; 
+  grid-row: 3/4;
+  font-size: 2.5vh;
+}
+.item .price-now, .item .discount {
+  display: none;
+}
+.soldout .price-now, .soldout .discount, .onsale .price-now, .onsale .discount {
+  display: block;
+}
+.item .onsale, .item .onsale span {
+  display: block;
+}
+.onsale .discount {
+  display: block;
+  grid-column: 3/4;
+  grid-row: 2/3;
   margin: auto;
-  font-size: larger;
-  background-color: #ba181b;
+  font-size: 2.5vh;
+  background-color: #bf4342;
   border-radius: 3px;
   padding: 2px;
   color: white;
   font-weight: bolder;
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Bebas Neue", cursive;
 }
+
 /*product page*/
+
 .theproduct {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
   grid-template-rows: auto;
   margin: 5vw;
+  margin-top: 15vh;
 }
 .theproduct img {
   max-width: 100%;
   margin: auto;
+  margin-top: 10vh;
+  height: 80vh;
 }
 .descriptionofitem {
   margin-left: 3vh;
   grid-column: 2/3;
-  margin-top: 25vh;
   display: block;
+  margin-top: 15vh;
 }
 .descriptionofitem h2 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Bebas Neue", cursive;
   font-size: 6vh;
 }
 .product-info {
@@ -172,64 +226,76 @@
 }
 .product-info h3 {
   text-align: center;
-  font-size: 2.2vh;
-  margin-top: 20vh;
+  font-size: 3vh;
   grid-column: 1/3;
+  margin-top: 15vh;
 }
 .product-info h4 {
-  font-size: 2vh;
-  margin-top: 5vh;
+  font-size: 2.5vh;
+  font-weight: lighter;
   grid-column: 1/3;
 }
-.descriptionofitem p {
+.descriptionofitem p,
+.product-info p {
   display: block;
-  font-size: 3vh;
-  font-family: "Roboto", sans-serif;
+  font-size: 2.5vh;
+  font-family: "Bebas Neue", cursive;
 }
 label {
-  font-size: 2vh;
-  font-family: "Roboto", sans-serif;
+  font-size: 3vh;
+  font-family: "Bebas Neue", cursive;
 }
-
 .price {
-  font-size: 2vh;
+  font-size: 3vh;
 }
 select {
-  margin-top: 5vh;
-  max-width: 20vh;
-  height: 3vh;
+  font-size: 2.5vh;
+  margin-top: 15vh;
+  margin-left: 1rem;
+  width: 30vh;
+  height: 5vh;
   grid-column: 1/3;
   grid-row: 4/5;
-  font-family: "Roboto", sans-serif;
+  font-family: "Bebas Neue", cursive;
 }
 .addtobasket {
-  font-family: "Roboto", sans-serif;
-  border-radius: 3px;
+  font-family: "Bebas Neue", cursive;
   margin: auto;
-  margin-top: 10vh;
+  margin-top: 20vh;
   width: 15vh;
   cursor: pointer;
   text-align: center;
   padding: 5px;
   grid-column: 2/3;
-  background-color: #d6ccc2;
+  font-size: 3vh;
+  color: whitesmoke;
+  background-color: black;
 }
 .addtobasket:hover {
-  color: whitesmoke;
-  background-color: #6d6875;
+  border-radius: 3px;
+  color: black;
+  background-color: whitesmoke;
   transition: 0.5s;
 }
-
 .theproduct h4,
 .theproduct h3 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-size: 3vh;
 }
-.theproduct ul li {
-  font-family: "Red Hat Display", sans-serif;
+.theproduct ul li,
+.product-info ul {
+  font-family: "Bebas Neue", cursive;
+  font-size: 2.5vh;
 }
 /*media queries*/
 
 @media only screen and (max-width: 930px) {
+  .item img {
+    text-align: center;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 70vw;
+  }
   .brands {
     display: grid;
     grid-template-columns: 1fr;
@@ -245,28 +311,35 @@ select {
   }
   .products {
     grid-template-columns: 1fr;
-  }
-  .products {
     text-align: center;
   }
   .description {
-    margin-left: 25vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
-  .description p {
+  .price-now {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    font-size: 3vh;
+  }
+  .onsale .discount { 
     grid-column: 1/2;
     grid-row: 2/3;
+    font-size: 3vh;
+  }
+  .soldoutlable {
+    grid-row: 4/5;
+    grid-column: 1/2;
+    font-size: 4vh;
   }
   .description h4 {
     grid-column: 1/2;
     grid-row: 3/4;
+    font-size: 3vh;
   }
   .theproduct {
     grid-template-columns: 1fr;
     margin: 2vw;
-  }
-  .theproduct img {
-    grid-column: 1/2;
-    grid-row: 1/2;
   }
   .descriptionofitem {
     grid-column: 1/2;
@@ -282,9 +355,17 @@ select {
     margin-top: 10vh;
     margin-bottom: 5vh;
     grid-column: 1/2;
+    padding: 2.5vh;
+    color: whitesmoke;
+    background-color: black;
   }
   .product-info ul {
     text-decoration: none;
     list-style: none;
+  }
+  .item,
+  .itemonsale,
+  .itemsoldout {
+    margin-left: 0;
   }
 }

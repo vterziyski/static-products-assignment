@@ -1,6 +1,9 @@
-const url="https://kea-alt-del.dk/t7/api/products/1528";
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
 
-//<img src="https://kea-alt-del.dk/t7/images/webp/1000/1526.webp" alt="Big-Cat-Backpack-Black">
+console.log(urlParams);
+
+const url="https://kea-alt-del.dk/t7/api/products/" + id;
 
 fetch(url)
 .then (res=>res.json())
@@ -13,5 +16,5 @@ function showProduct(product){
     document.querySelector(".theproduct img").src=`https://kea-alt-del.dk/t7/images/webp/1000/${product.id}.webp`
     document.querySelector(".theproduct img").alt=product.productdisplayname;
     document.querySelector(".price").textContent=product.price;
-    document.querySelector(".color").textContent=product.colour1;
+    document.querySelector(".color").textContent=product.basecolour;
 }

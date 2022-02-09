@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css"/>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
       </style>
     <title>Products</title>
   </head>
   <header>
     <div class="navbar">
-      <img src="images/logo.svg" alt="logo">
+      <a href="category.html"><img src="images/logo.svg" alt="logo"></a>
       <ul>
         <li><a href="category.html">Brands</a></li>
         <li><a href="productlist.html">Clothing</a></li>
@@ -21,32 +20,43 @@
       </ul>
     </div>
   </header>
-  <body>
+    <body>
       <h2 class="brand-name">Adidas</h2>
     <div class="products">
-      <section class="item">
-        <a href="product.html"><img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="Big-Cat-Backpack-Black"></a>
+      <main>
+      <template id="product-template">
+          <section class="item">
+        <a href="product.html?id=1531"><img src="https://kea-alt-del.dk/t7/images/webp/640/1526.webp" alt="Big-Cat-Backpack-Black"></a>
         <div class="description">
-            <h3><a href="product.html">Big Cat Backpack Black</a></h3>
-            <h4>500.00 kr.</h4>
+            <h3><a href="product.html?id=1531">Big Cat Backpack Black</a></h3>
+            <p class="price"><span>DKK</span></p>
+            <p class="soldoutlable">SOLD OUT</p>
+            <p class="discount"><span> %</span></p>
+            <p class="price-now">prev. 500 <span>kr.</span></p>
         </div>
       </section>
-      <section class="itemonsale">
+      </template> 
+    </main>
+     <!-- <section class="item">
         <a href="product.html"><img src="https://kea-alt-del.dk/t7/images/webp/640/1572.webp" alt="Essential-Training-Track-Pants"></a>
         <div class="description">
             <h3><a href="product.html">Big Cat Backpack Black</a></h3>
+            <div class="onsale">
+              <p class="prev-price">prev. 500 <span>kr.</span></p>
             <h4>400.00 kr.</h4>
-            <p class="sale">-20%</p>
+            <p class="discount">-20%</p>
+            </div>
         </div>
       </section>
-      <section class="itemsoldout">
-        <img src="https://kea-alt-del.dk/t7/images/webp/640/1567.webp" alt="Training-Shorts">
+      <section class="item">
+        <a href="product.html"><img src="https://kea-alt-del.dk/t7/images/webp/640/1567.webp" alt="Essential-Training-Track-Pants"></a>
         <div class="description">
             <h3><a href="product.html">Big Cat Backpack Black</a></h3>
             <h4>500.00 kr.</h4>
-            <p>SOLD OUT</p>
-        </div>
+            <p class="soldoutlable">SOLD OUT</p>
+        </div> 
       </section>
-    </div>
+    </div>-->
   </body>
+  <script src="productlist.js"></script>
 </html>
