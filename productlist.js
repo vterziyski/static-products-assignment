@@ -1,4 +1,10 @@
-const url="https://kea-alt-del.dk/t7/api/products";
+const urlParams = new URLSearchParams(window.location.search);
+const brandname = urlParams.get("brandname");
+
+console.log(urlParams);
+
+const url="https://kea-alt-del.dk/t7/api/products?brandname=" + brandname;
+
 
 fetch(url)
 .then (res=>res.json())
@@ -25,8 +31,9 @@ function showProduct(product) {
         copy.querySelector("section").classList.add("onsale");
     }
 
-    copy.querySelector(".price-now").textContent = Math.round (product.price/product.discount);
+    copy.querySelector(".price-now").textContent = Math.floor(product.price - (product.price * (product.discount/100)))
     copy.querySelector(".discount").textContent = product.discount;
+    copy.querySelector(".brand-name").textContent= product.brandname;
 
 
     const parent = document.querySelector("main");
