@@ -1,4 +1,4 @@
-/* const url="http://vaskommd.com/first-wp-website/wordpress/wp-json/wp/v2/posts";
+const url="http://vaskommd.com/first-wp-website/wordpress/wp-json/wp/v2/posts";
 
 fetch(url)
 .then (res=>res.json())
@@ -7,11 +7,10 @@ fetch(url)
 
 function handleProductlist(data){
     data.forEach(showPost);
-    console.log(data);
     
 }
 
-function showPost(post) {
+function showPost(brand) {
     const template = document.querySelector(".brands-templ").content;
     const copy = template.cloneNode(true);
     copy.querySelector(".letters ul li a").textContent=brand.brandname;
@@ -21,10 +20,3 @@ function showPost(post) {
     const parent = document.querySelector("main");
     parent.appendChild(copy);
 }
- */
-
-fetch(
-  "http://vaskommd.com/first-wp-website/wordpress/wp-json/wp/v2/posts?_fields=title"
-)
-  .then((res) => res.json())
-  .then((data) => console.log(data));
